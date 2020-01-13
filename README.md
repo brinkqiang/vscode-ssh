@@ -4,7 +4,7 @@ vscode-ssh
 Copyright (c) 2013-2018 brinkqiang (brink.qiang@gmail.com)
 
 -----------------
-vscode ssh 开发调试环境搭建
+vscode ssh 远程调试开发环境搭建
 -----------------
 -----------------
 <!-- TOC -->
