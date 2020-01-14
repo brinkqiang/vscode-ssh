@@ -121,3 +121,6 @@ sudo ln /usr/bin/cmake3 /usr/bin/cmake
 ![](images/sampledebug.png)
 
 ## 4.8. END
+注意事项: 在外网使用如果本身没有FQ, 请关闭更新, 原因是.vscode-server-insiders.zip的版本与客户端的版本必须保持完全一致.
+![](images/disableupdate.png)
+
