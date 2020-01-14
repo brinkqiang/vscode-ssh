@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>1. 安装VSCode-insider版本</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h2 id="vscode-ssh">vscode-ssh</h2>
+<p>Copyright (c) 2013-2018 brinkqiang (<a href="mailto:brink.qiang@gmail.com">brink.qiang@gmail.com</a>)</p>
+<hr>
+<h2 id="vscode-ssh-%e8%bf%9c%e7%a8%8b%e8%b0%83%e8%af%95%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba">vscode ssh 远程调试开发环境搭建</h2>
+<hr>
+<!-- TOC -->
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85vscode-insider%E7%89%88%E6%9C%AC">安装VSCode-insider版本</a></li>
+<li><a href="#%E5%9C%A8linux%E7%AB%AF-%E8%A7%A3%E5%8E%8Bvscode-server-insiderszip%E5%88%B0%E8%B4%A6%E5%8F%B7%E6%A0%B9%E7%9B%AE%E5%BD%95">在linux端 解压.vscode-server-insiders.zip到账号根目录</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85remote%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6">安装remote相关插件</a></li>
+<li><a href="#%E6%89%93%E5%BC%80%E8%BF%9C%E7%A8%8B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8">打开远程资源管理器</a>
+<ul>
+<li><a href="#%E9%80%89%E6%8B%A9ssh-targets-%E7%82%B9%E5%8F%B7%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E9%93%BE%E6%8E%A5">选择ssh targets 点+号创建一个新的链接</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5-ssh-%E8%B4%A6%E5%8F%B7ip%E5%9C%B0%E5%9D%80--a">输入 ssh 账号@IP地址 -A</a></li>
+<li><a href="#%E5%8F%B3%E9%94%AEip%E5%9C%B0%E5%9D%80">右键IP地址</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81">输入密码</a></li>
+<li><a href="#%E6%89%93%E5%BC%80%E5%B7%A5%E4%BD%9C%E5%8C%BA">打开工作区</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85cpptools-linuxvsix%E6%8F%92%E4%BB%B6">安装cpptools-linux.vsix插件</a></li>
+<li><a href="#%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95">编译调试</a>
+<ul>
+<li><a href="#%E5%85%88%E7%BC%96%E8%AF%91%E9%A1%B9%E7%9B%AE">先编译项目</a></li>
+<li><a href="#f9%E8%AE%BE%E7%BD%AE%E6%96%AD%E7%82%B9">F9设置断点</a></li>
+<li><a href="#f5%E8%B0%83%E8%AF%95-%E9%80%89%E6%8B%A9c-gdblldb-%E5%90%8E%E9%9D%A2%E9%BB%98%E8%AE%A4%E5%8D%B3%E5%8F%AF">F5调试, 选择C++ (GDB/LLDB), 后面默认即可</a></li>
+<li><a href="#%E5%BE%97%E5%88%B0%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">得到默认启动json配置文件</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%90%88%E7%90%86%E7%9A%84%E5%80%BC-%E4%B8%8B%E5%9B%BE%E4%B8%BAsample%E4%BE%8B%E5%AD%90%E8%B0%83%E8%AF%95%E8%AE%BE%E7%BD%AE">设置为合理的值, 下图为sample例子调试设置</a></li>
+<li><a href="#f5%E5%BC%80%E5%A7%8B%E8%B0%83%E8%AF%95">F5开始调试</a></li>
+</ul>
+</li>
+<li><a href="#end">END</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="1-%e5%ae%89%e8%a3%85vscode-insider%e7%89%88%e6%9c%ac">1. 安装VSCode-insider版本</h1>
+<p>安装setup目录VSCodeUserSetup-x64-1.42.0-insider.exe</p>
+<h1 id="2-%e5%9c%a8linux%e7%ab%af-%e8%a7%a3%e5%8e%8bvscode-server-insiderszip%e5%88%b0%e8%b4%a6%e5%8f%b7%e6%a0%b9%e7%9b%ae%e5%bd%95">2. 在linux端 解压.vscode-server-insiders.zip到账号根目录</h1>
+<pre><code><code><div>unzip -o -d ~/ .vscode-server-insiders.zip
+</div></code></code></pre>
+<h1 id="3-%e5%ae%89%e8%a3%85remote%e7%9b%b8%e5%85%b3%e6%8f%92%e4%bb%b6">3. 安装remote相关插件</h1>
+<p>打开插件页面 选择从VSIX安装插件 或 Ctrl+Shift+P 输入VSIX安装插件
+<img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\installvsix.png" alt="">
+(setup目录ms-vscode-remote开头的插件全部安装)
+其他插件看自己需求</p>
+<h1 id="4-%e6%89%93%e5%bc%80%e8%bf%9c%e7%a8%8b%e8%b5%84%e6%ba%90%e7%ae%a1%e7%90%86%e5%99%a8">4. 打开远程资源管理器</h1>
+<h2 id="41-%e9%80%89%e6%8b%a9ssh-targets-%e7%82%b9%e5%8f%b7%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e6%96%b0%e7%9a%84%e9%93%be%e6%8e%a5">4.1. 选择ssh targets 点+号创建一个新的链接</h2>
+<p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\openremote.png" alt=""></p>
+<h2 id="42-%e8%be%93%e5%85%a5-ssh-%e8%b4%a6%e5%8f%b7ip%e5%9c%b0%e5%9d%80--a">4.2. 输入 ssh 账号@IP地址 -A</h2>
+<p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\connectssh.png" alt=""></p>
+<p>例:</p>
+<pre><code><code><div>ssh test@10.246.34.79 -A
+</div></code></code></pre>
+<h2 id="43-%e5%8f%b3%e9%94%aeip%e5%9c%b0%e5%9d%80">4.3. 右键IP地址</h2>
+<p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\connecthost.png" alt=""></p>
+<p>例:</p>
+<pre><code><code><div>右键 10.246.34.79 -&gt; connect to host
+</div></code></code></pre>
+<h2 id="44-%e8%be%93%e5%85%a5%e5%af%86%e7%a0%81">4.4. 输入密码</h2>
+<p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\enterpasswd.png" alt="">
+链接成功会显示绿色图标
+<img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\connectok.png" alt=""></p>
+<h2 id="45-%e6%89%93%e5%bc%80%e5%b7%a5%e4%bd%9c%e5%8c%ba">4.5. 打开工作区</h2>
+<p>注意: 这个工作区是指远端工作区 非本地
+<img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\openwork.png" alt="">
+成功的情况 会显示 [SSH: 10.246.34.79]</p>
+<p>这里我们打开sample工程 便于测试调试功能</p>
+<h2 id="46-%e5%ae%89%e8%a3%85cpptools-linuxvsix%e6%8f%92%e4%bb%b6">4.6. 安装cpptools-linux.vsix插件</h2>
+<h2 id="47-%e7%bc%96%e8%af%91%e8%b0%83%e8%af%95">4.7. 编译调试</h2>
+<h3 id="471-%e5%85%88%e7%bc%96%e8%af%91%e9%a1%b9%e7%9b%ae">4.7.1. 先编译项目</h3>
+<p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\buildsample.png" alt=""></p>
+<h3 id="472-f9%e8%ae%be%e7%bd%ae%e6%96%ad%e7%82%b9">4.7.2. F9设置断点</h3>
+<p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\enterbreak.png" alt=""></p>
+<h3 id="473-f5%e8%b0%83%e8%af%95-%e9%80%89%e6%8b%a9c-gdblldb-%e5%90%8e%e9%9d%a2%e9%bb%98%e8%ae%a4%e5%8d%b3%e5%8f%af">4.7.3. F5调试, 选择C++ (GDB/LLDB), 后面默认即可</h3>
+<p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\debugsetup.png" alt=""></p>
+<h3 id="474-%e5%be%97%e5%88%b0%e9%bb%98%e8%ae%a4%e5%90%af%e5%8a%a8json%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">4.7.4. 得到默认启动json配置文件</h3>
+<p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\defaultlaunch.png" alt=""></p>
+<h3 id="475-%e8%ae%be%e7%bd%ae%e4%b8%ba%e5%90%88%e7%90%86%e7%9a%84%e5%80%bc-%e4%b8%8b%e5%9b%be%e4%b8%basample%e4%be%8b%e5%ad%90%e8%b0%83%e8%af%95%e8%ae%be%e7%bd%ae">4.7.5. 设置为合理的值, 下图为sample例子调试设置</h3>
+<p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\samplelaunch.png" alt=""></p>
+<h3 id="476-f5%e5%bc%80%e5%a7%8b%e8%b0%83%e8%af%95">4.7.6. F5开始调试</h3>
+<p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\sampledebug.png" alt=""></p>
+<h2 id="48-end">4.8. END</h2>
+
+    </body>
+    </html>
