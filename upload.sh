@@ -1,3 +1,6 @@
 #!/bin/bash
 
-scp .vscode-server-insiders.zip test@10.246.34.79:/home/test
+username=$1
+ip=$2
+
+scp .vscode-server-insiders.zip $username@$ip:/home/$username
