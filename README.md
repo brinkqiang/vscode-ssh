@@ -40,6 +40,16 @@ vscode ssh 远程调试开发环境搭建
 unzip -o -d ~/ .vscode-server-insiders.zip
 ```
 
+可用upload脚本上传
+windows
+```
+upload.bat test 10.246.34.79
+```
+linux
+```
+upload.sh test 10.246.34.79
+```
+
 # 3. 安装remote相关插件
 打开插件页面 选择从VSIX安装插件 或 Ctrl+Shift+P 输入VSIX安装插件
 ![](images/installvsix.png)
