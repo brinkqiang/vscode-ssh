@@ -20,6 +20,7 @@ vscode ssh 远程调试开发环境搭建
     - [打开工作区](#打开工作区)
     - [安装cpptools-linux.vsix插件](#安装cpptools-linuxvsix插件)
     - [编译调试](#编译调试)
+        - [注意: 例子工程使用了cmake3.2+](#注意-例子工程使用了cmake32)
         - [先编译项目](#先编译项目)
         - [F9设置断点](#f9设置断点)
         - [F5调试, 选择C++ (GDB/LLDB), 后面默认即可](#f5调试-选择c-gdblldb-后面默认即可)
@@ -84,22 +85,29 @@ ssh test@10.246.34.79 -A
 
 ## 4.7. 编译调试
 
-### 4.7.1. 先编译项目
+### 4.7.1. 注意: 例子工程使用了cmake3.2+
+安装之后需要ln一下.
+```
+sudo rm -rf /usr/bin/cmake
+sudo ln /usr/bin/cmake3 /usr/bin/cmake
+```
+
+### 4.7.2. 先编译项目
 ![](images/buildsample.png)
 
-### 4.7.2. F9设置断点
+### 4.7.3. F9设置断点
 ![](images/enterbreak.png)
 
-### 4.7.3. F5调试, 选择C++ (GDB/LLDB), 后面默认即可
+### 4.7.4. F5调试, 选择C++ (GDB/LLDB), 后面默认即可
 ![](images/debugsetup.png)
 
-### 4.7.4. 得到默认启动json配置文件
+### 4.7.5. 得到默认启动json配置文件
 ![](images/defaultlaunch.png)
 
-### 4.7.5. 设置为合理的值, 下图为sample例子调试设置
+### 4.7.6. 设置为合理的值, 下图为sample例子调试设置
 ![](images/samplelaunch.png)
 
-### 4.7.6. F5开始调试
+### 4.7.7. F5开始调试
 ![](images/sampledebug.png)
 
 ## 4.8. END

@@ -41,6 +41,7 @@
 <li><a href="#%E5%AE%89%E8%A3%85cpptools-linuxvsix%E6%8F%92%E4%BB%B6">安装cpptools-linux.vsix插件</a></li>
 <li><a href="#%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95">编译调试</a>
 <ul>
+<li><a href="#%E6%B3%A8%E6%84%8F-%E4%BE%8B%E5%AD%90%E5%B7%A5%E7%A8%8B%E4%BD%BF%E7%94%A8%E4%BA%86cmake32">注意: 例子工程使用了cmake3.2+</a></li>
 <li><a href="#%E5%85%88%E7%BC%96%E8%AF%91%E9%A1%B9%E7%9B%AE">先编译项目</a></li>
 <li><a href="#f9%E8%AE%BE%E7%BD%AE%E6%96%AD%E7%82%B9">F9设置断点</a></li>
 <li><a href="#f5%E8%B0%83%E8%AF%95-%E9%80%89%E6%8B%A9c-gdblldb-%E5%90%8E%E9%9D%A2%E9%BB%98%E8%AE%A4%E5%8D%B3%E5%8F%AF">F5调试, 选择C++ (GDB/LLDB), 后面默认即可</a></li>
@@ -88,17 +89,22 @@
 <p>这里我们打开sample工程 便于测试调试功能</p>
 <h2 id="46-%e5%ae%89%e8%a3%85cpptools-linuxvsix%e6%8f%92%e4%bb%b6">4.6. 安装cpptools-linux.vsix插件</h2>
 <h2 id="47-%e7%bc%96%e8%af%91%e8%b0%83%e8%af%95">4.7. 编译调试</h2>
-<h3 id="471-%e5%85%88%e7%bc%96%e8%af%91%e9%a1%b9%e7%9b%ae">4.7.1. 先编译项目</h3>
+<h3 id="471-%e6%b3%a8%e6%84%8f-%e4%be%8b%e5%ad%90%e5%b7%a5%e7%a8%8b%e4%bd%bf%e7%94%a8%e4%ba%86cmake32">4.7.1. 注意: 例子工程使用了cmake3.2+</h3>
+<p>安装之后需要ln一下.</p>
+<pre><code><code><div>sudo rm -rf /usr/bin/cmake
+sudo ln /usr/bin/cmake3 /usr/bin/cmake
+</div></code></code></pre>
+<h3 id="472-%e5%85%88%e7%bc%96%e8%af%91%e9%a1%b9%e7%9b%ae">4.7.2. 先编译项目</h3>
 <p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\buildsample.png" alt=""></p>
-<h3 id="472-f9%e8%ae%be%e7%bd%ae%e6%96%ad%e7%82%b9">4.7.2. F9设置断点</h3>
+<h3 id="473-f9%e8%ae%be%e7%bd%ae%e6%96%ad%e7%82%b9">4.7.3. F9设置断点</h3>
 <p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\enterbreak.png" alt=""></p>
-<h3 id="473-f5%e8%b0%83%e8%af%95-%e9%80%89%e6%8b%a9c-gdblldb-%e5%90%8e%e9%9d%a2%e9%bb%98%e8%ae%a4%e5%8d%b3%e5%8f%af">4.7.3. F5调试, 选择C++ (GDB/LLDB), 后面默认即可</h3>
+<h3 id="474-f5%e8%b0%83%e8%af%95-%e9%80%89%e6%8b%a9c-gdblldb-%e5%90%8e%e9%9d%a2%e9%bb%98%e8%ae%a4%e5%8d%b3%e5%8f%af">4.7.4. F5调试, 选择C++ (GDB/LLDB), 后面默认即可</h3>
 <p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\debugsetup.png" alt=""></p>
-<h3 id="474-%e5%be%97%e5%88%b0%e9%bb%98%e8%ae%a4%e5%90%af%e5%8a%a8json%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">4.7.4. 得到默认启动json配置文件</h3>
+<h3 id="475-%e5%be%97%e5%88%b0%e9%bb%98%e8%ae%a4%e5%90%af%e5%8a%a8json%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">4.7.5. 得到默认启动json配置文件</h3>
 <p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\defaultlaunch.png" alt=""></p>
-<h3 id="475-%e8%ae%be%e7%bd%ae%e4%b8%ba%e5%90%88%e7%90%86%e7%9a%84%e5%80%bc-%e4%b8%8b%e5%9b%be%e4%b8%basample%e4%be%8b%e5%ad%90%e8%b0%83%e8%af%95%e8%ae%be%e7%bd%ae">4.7.5. 设置为合理的值, 下图为sample例子调试设置</h3>
+<h3 id="476-%e8%ae%be%e7%bd%ae%e4%b8%ba%e5%90%88%e7%90%86%e7%9a%84%e5%80%bc-%e4%b8%8b%e5%9b%be%e4%b8%basample%e4%be%8b%e5%ad%90%e8%b0%83%e8%af%95%e8%ae%be%e7%bd%ae">4.7.6. 设置为合理的值, 下图为sample例子调试设置</h3>
 <p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\samplelaunch.png" alt=""></p>
-<h3 id="476-f5%e5%bc%80%e5%a7%8b%e8%b0%83%e8%af%95">4.7.6. F5开始调试</h3>
+<h3 id="477-f5%e5%bc%80%e5%a7%8b%e8%b0%83%e8%af%95">4.7.7. F5开始调试</h3>
 <p><img src="file:///e:\system\home\git_dmsoft\vscode-ssh\images\sampledebug.png" alt=""></p>
 <h2 id="48-end">4.8. END</h2>
 
