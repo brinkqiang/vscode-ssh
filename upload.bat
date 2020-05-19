@@ -17,8 +17,8 @@ echo username="%username%" ip="%ip%" port="%port%"
 
 echo upload .vscode-server-insiders start
 
-pscp -batch -P %port% -pw %passwd% setup\.vscode-server-insiders.zip %username%@%ip%.:~
+pscp -P %port% -pw %passwd% setup\.vscode-server-insiders.zip %username%@%ip%:~
 
-plink -batch -P %port% -pw %passwd% %username%@%ip% "unzip -o -d ~/ ~/.vscode-server-insiders.zip" 
+plink -P %port% -pw %passwd% %username%@%ip% "unzip -o -d ~/ ~/.vscode-server-insiders.zip" 
 
 echo upload .vscode-server-insiders end
