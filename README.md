@@ -9,35 +9,35 @@ vscode ssh 远程调试开发环境搭建
 -----------------
 <!-- TOC -->
 
-- [安装VSCode-insider版本](#安装vscode-insider版本)
-- [在linux端 解压.vscode-server-insiders.zip到账号根目录](#在linux端-解压vscode-server-insiderszip到账号根目录)
-- [安装remote相关插件](#安装remote相关插件)
-- [打开远程资源管理器](#打开远程资源管理器)
-    - [选择ssh targets 点+号创建一个新的链接](#选择ssh-targets-点号创建一个新的链接)
-    - [输入 ssh 账号@IP地址 -A](#输入-ssh-账号ip地址--a)
-    - [右键IP地址](#右键ip地址)
-    - [输入密码](#输入密码)
-    - [打开工作区](#打开工作区)
-    - [安装cpptools-linux.vsix插件](#安装cpptools-linuxvsix插件)
-    - [编译调试](#编译调试)
-        - [注意: 例子工程使用了cmake3.2+](#注意-例子工程使用了cmake32)
-        - [先编译项目](#先编译项目)
-        - [F9设置断点](#f9设置断点)
-        - [F5调试, 选择C++ (GDB/LLDB), 后面默认即可(选gcc/g++后续会报错 别选错了)](#f5调试-选择c-gdblldb-后面默认即可选gccg后续会报错-别选错了)
-        - [得到默认启动json配置文件](#得到默认启动json配置文件)
-        - [设置为合理的值, 下图为sample例子调试设置](#设置为合理的值-下图为sample例子调试设置)
-        - [F5开始调试](#f5开始调试)
-    - [END](#end)
+- [1. 安装VSCode版本](#1-安装vscode版本)
+- [2. 在linux端 解压.vscode-server.zip到账号根目录](#2-在linux端-解压vscode-serverzip到账号根目录)
+- [3. 安装remote相关插件](#3-安装remote相关插件)
+- [4. 打开远程资源管理器](#4-打开远程资源管理器)
+  - [4.1. 选择ssh targets 点+号创建一个新的链接](#41-选择ssh-targets-点号创建一个新的链接)
+  - [4.2. 输入 ssh 账号@IP地址 -A](#42-输入-ssh-账号ip地址--a)
+  - [4.3. 右键IP地址](#43-右键ip地址)
+  - [4.4. 输入密码](#44-输入密码)
+  - [4.5. 打开工作区](#45-打开工作区)
+  - [4.6. 安装cpptools-linux.vsix插件](#46-安装cpptools-linuxvsix插件)
+  - [4.7. 编译调试](#47-编译调试)
+    - [4.7.1. 注意: 例子工程使用了cmake3.2+](#471-注意-例子工程使用了cmake32)
+    - [4.7.2. 先编译项目](#472-先编译项目)
+    - [4.7.3. F9设置断点](#473-f9设置断点)
+    - [4.7.4. F5调试, 选择C++ (GDB/LLDB), 后面默认即可(选gcc/g++后续会报错 别选错了)](#474-f5调试-选择c-gdblldb-后面默认即可选gccg后续会报错-别选错了)
+    - [4.7.5. 得到默认启动json配置文件](#475-得到默认启动json配置文件)
+    - [4.7.6. 设置为合理的值, 下图为sample例子调试设置](#476-设置为合理的值-下图为sample例子调试设置)
+    - [4.7.7. F5开始调试](#477-f5开始调试)
+  - [4.8. END](#48-end)
 
 <!-- /TOC -->
 
-# 1. 安装VSCode-insider版本
+# 1. 安装VSCode版本
 
-安装setup目录VSCodeUserSetup-x64-1.42.0-insider.exe
+安装setup目录VSCodeUserSetup-x64-1.46.1.exe
 
-# 2. 在linux端 解压.vscode-server-insiders.zip到账号根目录
+# 2. 在linux端 解压.vscode-server.zip到账号根目录
 ```
-unzip -o -d ~/ .vscode-server-insiders.zip
+unzip -o -d ~/ .vscode-server.zip
 ```
 
 可用upload脚本上传
