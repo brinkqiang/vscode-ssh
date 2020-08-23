@@ -1,130 +1,390 @@
-<!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>1. 安装VSCode-insider版本</title>
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-        
-        <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
-</style>
-        <style>
-            body {
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
-                font-size: 14px;
-                line-height: 1.6;
-            }
-        </style>
-        
-        
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\suiy\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
     </head>
-    <body class="vscode-light">
-        <h2 id="vscode-ssh">vscode-ssh</h2>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2>vscode-ssh</h2>
 <p>Copyright (c) 2013-2018 brinkqiang (<a href="mailto:brink.qiang@gmail.com">brink.qiang@gmail.com</a>)</p>
 <hr>
-<h2 id="vscode-ssh-%e8%bf%9c%e7%a8%8b%e8%b0%83%e8%af%95%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba">vscode ssh 远程调试开发环境搭建</h2>
+<h2>vscode ssh &#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x642D;&#x5EFA;</h2>
 <hr>
-<!-- TOC -->
 <ul>
-<li><a href="#%E5%AE%89%E8%A3%85vscode-insider%E7%89%88%E6%9C%AC">安装VSCode-insider版本</a></li>
-<li><a href="#%E5%9C%A8linux%E7%AB%AF-%E8%A7%A3%E5%8E%8Bvscode-server-insiderszip%E5%88%B0%E8%B4%A6%E5%8F%B7%E6%A0%B9%E7%9B%AE%E5%BD%95">在linux端 解压.vscode-server-insiders.zip到账号根目录</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85remote%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6">安装remote相关插件</a></li>
-<li><a href="#%E6%89%93%E5%BC%80%E8%BF%9C%E7%A8%8B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8">打开远程资源管理器</a>
+<li><a href="#1-%E5%AE%89%E8%A3%85vscode%E7%89%88%E6%9C%AC">1. &#x5B89;&#x88C5;VSCode&#x7248;&#x672C;</a></li>
+<li><a href="#2-%E5%9C%A8linux%E7%AB%AF-%E8%A7%A3%E5%8E%8Bvscode-serverzip%E5%88%B0%E8%B4%A6%E5%8F%B7%E6%A0%B9%E7%9B%AE%E5%BD%95">2. &#x5728;linux&#x7AEF; &#x89E3;&#x538B;.vscode-server.zip&#x5230;&#x8D26;&#x53F7;&#x6839;&#x76EE;&#x5F55;</a></li>
+<li><a href="#3-%E5%AE%89%E8%A3%85remote%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6">3. &#x5B89;&#x88C5;remote&#x76F8;&#x5173;&#x63D2;&#x4EF6;</a></li>
+<li><a href="#4-%E6%89%93%E5%BC%80%E8%BF%9C%E7%A8%8B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8">4. &#x6253;&#x5F00;&#x8FDC;&#x7A0B;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;</a>
 <ul>
-<li><a href="#%E9%80%89%E6%8B%A9ssh-targets-%E7%82%B9%E5%8F%B7%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E9%93%BE%E6%8E%A5">选择ssh targets 点+号创建一个新的链接</a></li>
-<li><a href="#%E8%BE%93%E5%85%A5-ssh-%E8%B4%A6%E5%8F%B7ip%E5%9C%B0%E5%9D%80--a">输入 ssh 账号@IP地址 -A</a></li>
-<li><a href="#%E5%8F%B3%E9%94%AEip%E5%9C%B0%E5%9D%80">右键IP地址</a></li>
-<li><a href="#%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81">输入密码</a></li>
-<li><a href="#%E6%89%93%E5%BC%80%E5%B7%A5%E4%BD%9C%E5%8C%BA">打开工作区</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85cpptools-linuxvsix%E6%8F%92%E4%BB%B6">安装cpptools-linux.vsix插件</a></li>
-<li><a href="#%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95">编译调试</a>
+<li><a href="#41-%E9%80%89%E6%8B%A9ssh-targets-%E7%82%B9%E5%8F%B7%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E9%93%BE%E6%8E%A5">4.1. &#x9009;&#x62E9;ssh targets &#x70B9;+&#x53F7;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x94FE;&#x63A5;</a></li>
+<li><a href="#42-%E8%BE%93%E5%85%A5-ssh-%E8%B4%A6%E5%8F%B7ip%E5%9C%B0%E5%9D%80--a">4.2. &#x8F93;&#x5165; ssh &#x8D26;&#x53F7;@IP&#x5730;&#x5740; -A</a></li>
+<li><a href="#43-%E5%8F%B3%E9%94%AEip%E5%9C%B0%E5%9D%80">4.3. &#x53F3;&#x952E;IP&#x5730;&#x5740;</a></li>
+<li><a href="#44-%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81">4.4. &#x8F93;&#x5165;&#x5BC6;&#x7801;</a></li>
+<li><a href="#45-%E6%89%93%E5%BC%80%E5%B7%A5%E4%BD%9C%E5%8C%BA">4.5. &#x6253;&#x5F00;&#x5DE5;&#x4F5C;&#x533A;</a></li>
+<li><a href="#46-%E5%AE%89%E8%A3%85cpptools-linuxvsix%E6%8F%92%E4%BB%B6">4.6. &#x5B89;&#x88C5;cpptools-linux.vsix&#x63D2;&#x4EF6;</a></li>
+<li><a href="#47-%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95">4.7. &#x7F16;&#x8BD1;&#x8C03;&#x8BD5;</a>
 <ul>
-<li><a href="#%E6%B3%A8%E6%84%8F-%E4%BE%8B%E5%AD%90%E5%B7%A5%E7%A8%8B%E4%BD%BF%E7%94%A8%E4%BA%86cmake32">注意: 例子工程使用了cmake3.2+</a></li>
-<li><a href="#%E5%85%88%E7%BC%96%E8%AF%91%E9%A1%B9%E7%9B%AE">先编译项目</a></li>
-<li><a href="#f9%E8%AE%BE%E7%BD%AE%E6%96%AD%E7%82%B9">F9设置断点</a></li>
-<li><a href="#f5%E8%B0%83%E8%AF%95-%E9%80%89%E6%8B%A9c-gdblldb-%E5%90%8E%E9%9D%A2%E9%BB%98%E8%AE%A4%E5%8D%B3%E5%8F%AF%E9%80%89gccg%E5%90%8E%E7%BB%AD%E4%BC%9A%E6%8A%A5%E9%94%99-%E5%88%AB%E9%80%89%E9%94%99%E4%BA%86">F5调试, 选择C++ (GDB/LLDB), 后面默认即可(选gcc/g++后续会报错 别选错了)</a></li>
-<li><a href="#%E5%BE%97%E5%88%B0%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">得到默认启动json配置文件</a></li>
-<li><a href="#%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%90%88%E7%90%86%E7%9A%84%E5%80%BC-%E4%B8%8B%E5%9B%BE%E4%B8%BAsample%E4%BE%8B%E5%AD%90%E8%B0%83%E8%AF%95%E8%AE%BE%E7%BD%AE">设置为合理的值, 下图为sample例子调试设置</a></li>
-<li><a href="#f5%E5%BC%80%E5%A7%8B%E8%B0%83%E8%AF%95">F5开始调试</a></li>
+<li><a href="#471-%E6%B3%A8%E6%84%8F-%E4%BE%8B%E5%AD%90%E5%B7%A5%E7%A8%8B%E4%BD%BF%E7%94%A8%E4%BA%86cmake32">4.7.1. &#x6CE8;&#x610F;: &#x4F8B;&#x5B50;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;cmake3.2+</a></li>
+<li><a href="#472-%E5%85%88%E7%BC%96%E8%AF%91%E9%A1%B9%E7%9B%AE">4.7.2. &#x5148;&#x7F16;&#x8BD1;&#x9879;&#x76EE;</a></li>
+<li><a href="#473-f9%E8%AE%BE%E7%BD%AE%E6%96%AD%E7%82%B9">4.7.3. F9&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;</a></li>
+<li><a href="#474-f5%E8%B0%83%E8%AF%95-%E9%80%89%E6%8B%A9c-gdblldb-%E5%90%8E%E9%9D%A2%E9%BB%98%E8%AE%A4%E5%8D%B3%E5%8F%AF%E9%80%89gccg%E5%90%8E%E7%BB%AD%E4%BC%9A%E6%8A%A5%E9%94%99-%E5%88%AB%E9%80%89%E9%94%99%E4%BA%86">4.7.4. F5&#x8C03;&#x8BD5;, &#x9009;&#x62E9;C++ (GDB/LLDB), &#x540E;&#x9762;&#x9ED8;&#x8BA4;&#x5373;&#x53EF;(&#x9009;gcc/g++&#x540E;&#x7EED;&#x4F1A;&#x62A5;&#x9519; &#x522B;&#x9009;&#x9519;&#x4E86;)</a></li>
+<li><a href="#475-%E5%BE%97%E5%88%B0%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">4.7.5. &#x5F97;&#x5230;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;json&#x914D;&#x7F6E;&#x6587;&#x4EF6;</a></li>
+<li><a href="#476-%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%90%88%E7%90%86%E7%9A%84%E5%80%BC-%E4%B8%8B%E5%9B%BE%E4%B8%BAsample%E4%BE%8B%E5%AD%90%E8%B0%83%E8%AF%95%E8%AE%BE%E7%BD%AE">4.7.6. &#x8BBE;&#x7F6E;&#x4E3A;&#x5408;&#x7406;&#x7684;&#x503C;, &#x4E0B;&#x56FE;&#x4E3A;sample&#x4F8B;&#x5B50;&#x8C03;&#x8BD5;&#x8BBE;&#x7F6E;</a></li>
+<li><a href="#477-f5%E5%BC%80%E5%A7%8B%E8%B0%83%E8%AF%95">4.7.7. F5&#x5F00;&#x59CB;&#x8C03;&#x8BD5;</a></li>
 </ul>
 </li>
-<li><a href="#end">END</a></li>
+<li><a href="#48-end">4.8. END</a></li>
 </ul>
 </li>
 </ul>
-<!-- /TOC -->
-<h1 id="1-%e5%ae%89%e8%a3%85vscode-insider%e7%89%88%e6%9c%ac">1. 安装VSCode-insider版本</h1>
-<p>安装setup目录VSCodeUserSetup-x64-1.42.0-insider.exe</p>
-<h1 id="2-%e5%9c%a8linux%e7%ab%af-%e8%a7%a3%e5%8e%8bvscode-server-insiderszip%e5%88%b0%e8%b4%a6%e5%8f%b7%e6%a0%b9%e7%9b%ae%e5%bd%95">2. 在linux端 解压.vscode-server-insiders.zip到账号根目录</h1>
-<pre><code><code><div>unzip -o -d ~/ .vscode-server-insiders.zip
-</div></code></code></pre>
-<p>可用upload脚本上传</p>
-<p>命令格式如下upload.(bat || sh) 账号名(默认值:root) IP(默认值:127.0.0.1) 端口(默认值:22)</p>
+<h1 class="mume-header" id="1-%E5%AE%89%E8%A3%85vscode%E7%89%88%E6%9C%AC">1. &#x5B89;&#x88C5;VSCode&#x7248;&#x672C;</h1>
+
+<p>&#x5B89;&#x88C5;setup&#x76EE;&#x5F55;VSCodeUserSetup-x64-1.46.1.exe</p>
+<h1 class="mume-header" id="2-%E5%9C%A8linux%E7%AB%AF-%E8%A7%A3%E5%8E%8Bvscode-serverzip%E5%88%B0%E8%B4%A6%E5%8F%B7%E6%A0%B9%E7%9B%AE%E5%BD%95">2. &#x5728;linux&#x7AEF; &#x89E3;&#x538B;.vscode-server.zip&#x5230;&#x8D26;&#x53F7;&#x6839;&#x76EE;&#x5F55;</h1>
+
+<pre data-role="codeBlock" data-info class="language-"><code>unzip -o -d ~/ .vscode-server.zip
+</code></pre><p>&#x53EF;&#x7528;upload&#x811A;&#x672C;&#x4E0A;&#x4F20;</p>
+<p>&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x5982;&#x4E0B;upload.(bat || sh) &#x8D26;&#x53F7;&#x540D;(&#x9ED8;&#x8BA4;&#x503C;:root) IP(&#x9ED8;&#x8BA4;&#x503C;:127.0.0.1) &#x7AEF;&#x53E3;(&#x9ED8;&#x8BA4;&#x503C;:22)</p>
 <p>windows</p>
-<pre><code><code><div>upload.bat test 10.246.34.79 22
-</div></code></code></pre>
-<p>linux</p>
-<pre><code><code><div>bash upload.sh test 10.246.34.79 22
-</div></code></code></pre>
-<h1 id="3-%e5%ae%89%e8%a3%85remote%e7%9b%b8%e5%85%b3%e6%8f%92%e4%bb%b6">3. 安装remote相关插件</h1>
-<p>打开插件页面 选择从VSIX安装插件 或 Ctrl+Shift+P 输入VSIX安装插件
-<img src="file:///h:\home\git\private_github\vscode-ssh\images\installvsix.png" alt="">
-(setup目录ms-vscode-remote开头的插件全部安装)
-其他插件看自己需求
-可用install_extension_dev脚本安装</p>
+<pre data-role="codeBlock" data-info class="language-"><code>upload.bat test 10.246.34.79 22
+</code></pre><p>linux</p>
+<pre data-role="codeBlock" data-info class="language-"><code>bash upload.sh test 10.246.34.79 22
+</code></pre><h1 class="mume-header" id="3-%E5%AE%89%E8%A3%85remote%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6">3. &#x5B89;&#x88C5;remote&#x76F8;&#x5173;&#x63D2;&#x4EF6;</h1>
+
+<p>&#x6253;&#x5F00;&#x63D2;&#x4EF6;&#x9875;&#x9762; &#x9009;&#x62E9;&#x4ECE;VSIX&#x5B89;&#x88C5;&#x63D2;&#x4EF6; &#x6216; Ctrl+Shift+P &#x8F93;&#x5165;VSIX&#x5B89;&#x88C5;&#x63D2;&#x4EF6;<br>
+<img src="images/installvsix.png" alt><br>
+(setup&#x76EE;&#x5F55;ms-vscode-remote&#x5F00;&#x5934;&#x7684;&#x63D2;&#x4EF6;&#x5168;&#x90E8;&#x5B89;&#x88C5;)<br>
+&#x5176;&#x4ED6;&#x63D2;&#x4EF6;&#x770B;&#x81EA;&#x5DF1;&#x9700;&#x6C42;<br>
+&#x53EF;&#x7528;install_extension_dev&#x811A;&#x672C;&#x5B89;&#x88C5;</p>
 <p>install_extension_dev.(bat || sh)</p>
 <p>windows</p>
-<pre><code><code><div>install_extension_dev.bat
-</div></code></code></pre>
-<p>linux</p>
-<pre><code><code><div>bash install_extension_dev.sh
-</div></code></code></pre>
-<h1 id="4-%e6%89%93%e5%bc%80%e8%bf%9c%e7%a8%8b%e8%b5%84%e6%ba%90%e7%ae%a1%e7%90%86%e5%99%a8">4. 打开远程资源管理器</h1>
-<h2 id="41-%e9%80%89%e6%8b%a9ssh-targets-%e7%82%b9%e5%8f%b7%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e6%96%b0%e7%9a%84%e9%93%be%e6%8e%a5">4.1. 选择ssh targets 点+号创建一个新的链接</h2>
-<p><img src="file:///h:\home\git\private_github\vscode-ssh\images\openremote.png" alt=""></p>
-<h2 id="42-%e8%be%93%e5%85%a5-ssh-%e8%b4%a6%e5%8f%b7ip%e5%9c%b0%e5%9d%80--a">4.2. 输入 ssh 账号@IP地址 -A</h2>
-<p><img src="file:///h:\home\git\private_github\vscode-ssh\images\connectssh.png" alt=""></p>
-<p>例:</p>
-<pre><code><code><div>ssh test@10.246.34.79 -A
-</div></code></code></pre>
-<h2 id="43-%e5%8f%b3%e9%94%aeip%e5%9c%b0%e5%9d%80">4.3. 右键IP地址</h2>
-<p><img src="file:///h:\home\git\private_github\vscode-ssh\images\connecthost.png" alt=""></p>
-<p>例:</p>
-<pre><code><code><div>右键 10.246.34.79 -&gt; connect to host
-</div></code></code></pre>
-<h2 id="44-%e8%be%93%e5%85%a5%e5%af%86%e7%a0%81">4.4. 输入密码</h2>
-<p><img src="file:///h:\home\git\private_github\vscode-ssh\images\enterpasswd.png" alt="">
-链接成功会显示绿色图标
-<img src="file:///h:\home\git\private_github\vscode-ssh\images\connectok.png" alt=""></p>
-<h2 id="45-%e6%89%93%e5%bc%80%e5%b7%a5%e4%bd%9c%e5%8c%ba">4.5. 打开工作区</h2>
-<p>注意: 这个工作区是指远端工作区 非本地
-<img src="file:///h:\home\git\private_github\vscode-ssh\images\openwork.png" alt="">
-成功的情况 会显示 [SSH: 10.246.34.79]</p>
-<p>这里我们打开sample工程 便于测试调试功能</p>
-<h2 id="46-%e5%ae%89%e8%a3%85cpptools-linuxvsix%e6%8f%92%e4%bb%b6">4.6. 安装cpptools-linux.vsix插件</h2>
-<h2 id="47-%e7%bc%96%e8%af%91%e8%b0%83%e8%af%95">4.7. 编译调试</h2>
-<h3 id="471-%e6%b3%a8%e6%84%8f-%e4%be%8b%e5%ad%90%e5%b7%a5%e7%a8%8b%e4%bd%bf%e7%94%a8%e4%ba%86cmake32">4.7.1. 注意: 例子工程使用了cmake3.2+</h3>
-<p>安装之后需要ln一下.</p>
-<pre><code><code><div>sudo rm -rf /usr/bin/cmake
-sudo ln /usr/bin/cmake3 /usr/bin/cmake
-</div></code></code></pre>
-<h3 id="472-%e5%85%88%e7%bc%96%e8%af%91%e9%a1%b9%e7%9b%ae">4.7.2. 先编译项目</h3>
-<p><img src="file:///h:\home\git\private_github\vscode-ssh\images\buildsample.png" alt=""></p>
-<h3 id="473-f9%e8%ae%be%e7%bd%ae%e6%96%ad%e7%82%b9">4.7.3. F9设置断点</h3>
-<p><img src="file:///h:\home\git\private_github\vscode-ssh\images\enterbreak.png" alt=""></p>
-<h3 id="474-f5%e8%b0%83%e8%af%95-%e9%80%89%e6%8b%a9c-gdblldb-%e5%90%8e%e9%9d%a2%e9%bb%98%e8%ae%a4%e5%8d%b3%e5%8f%af%e9%80%89gccg%e5%90%8e%e7%bb%ad%e4%bc%9a%e6%8a%a5%e9%94%99-%e5%88%ab%e9%80%89%e9%94%99%e4%ba%86">4.7.4. F5调试, 选择C++ (GDB/LLDB), 后面默认即可(选gcc/g++后续会报错 别选错了)</h3>
-<p><img src="file:///h:\home\git\private_github\vscode-ssh\images\debugsetup.png" alt=""></p>
-<h3 id="475-%e5%be%97%e5%88%b0%e9%bb%98%e8%ae%a4%e5%90%af%e5%8a%a8json%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">4.7.5. 得到默认启动json配置文件</h3>
-<p><img src="file:///h:\home\git\private_github\vscode-ssh\images\defaultlaunch.png" alt=""></p>
-<h3 id="476-%e8%ae%be%e7%bd%ae%e4%b8%ba%e5%90%88%e7%90%86%e7%9a%84%e5%80%bc-%e4%b8%8b%e5%9b%be%e4%b8%basample%e4%be%8b%e5%ad%90%e8%b0%83%e8%af%95%e8%ae%be%e7%bd%ae">4.7.6. 设置为合理的值, 下图为sample例子调试设置</h3>
-<p><img src="file:///h:\home\git\private_github\vscode-ssh\images\samplelaunch.png" alt=""></p>
-<h3 id="477-f5%e5%bc%80%e5%a7%8b%e8%b0%83%e8%af%95">4.7.7. F5开始调试</h3>
-<p><img src="file:///h:\home\git\private_github\vscode-ssh\images\sampledebug.png" alt=""></p>
-<h2 id="48-end">4.8. END</h2>
-<p>注意事项: 在外网使用如果本身没有FQ, 请关闭更新, 原因是.vscode-server-insiders.zip的版本与客户端的版本必须保持完全一致.
-<img src="file:///h:\home\git\private_github\vscode-ssh\images\disableupdate.png" alt=""></p>
+<pre data-role="codeBlock" data-info class="language-"><code>install_extension_dev.bat
+</code></pre><p>linux</p>
+<pre data-role="codeBlock" data-info class="language-"><code>bash install_extension_dev.sh
+</code></pre><h1 class="mume-header" id="4-%E6%89%93%E5%BC%80%E8%BF%9C%E7%A8%8B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8">4. &#x6253;&#x5F00;&#x8FDC;&#x7A0B;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;</h1>
 
-    </body>
-    </html>
+<h2 class="mume-header" id="41-%E9%80%89%E6%8B%A9ssh-targets-%E7%82%B9%E5%8F%B7%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E9%93%BE%E6%8E%A5">4.1. &#x9009;&#x62E9;ssh targets &#x70B9;+&#x53F7;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x94FE;&#x63A5;</h2>
+
+<p><img src="images/openremote.png" alt></p>
+<h2 class="mume-header" id="42-%E8%BE%93%E5%85%A5-ssh-%E8%B4%A6%E5%8F%B7ip%E5%9C%B0%E5%9D%80-a">4.2. &#x8F93;&#x5165; ssh &#x8D26;&#x53F7;@IP&#x5730;&#x5740; -A</h2>
+
+<p><img src="images/connectssh.png" alt></p>
+<p>&#x4F8B;:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>ssh test@10.246.34.79 -A
+</code></pre><h2 class="mume-header" id="43-%E5%8F%B3%E9%94%AEip%E5%9C%B0%E5%9D%80">4.3. &#x53F3;&#x952E;IP&#x5730;&#x5740;</h2>
+
+<p><img src="images/connecthost.png" alt></p>
+<p>&#x4F8B;:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>&#x53F3;&#x952E; 10.246.34.79 -&gt; connect to host
+</code></pre><h2 class="mume-header" id="44-%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81">4.4. &#x8F93;&#x5165;&#x5BC6;&#x7801;</h2>
+
+<p><img src="images/enterpasswd.png" alt><br>
+&#x94FE;&#x63A5;&#x6210;&#x529F;&#x4F1A;&#x663E;&#x793A;&#x7EFF;&#x8272;&#x56FE;&#x6807;<br>
+<img src="images/connectok.png" alt></p>
+<h2 class="mume-header" id="45-%E6%89%93%E5%BC%80%E5%B7%A5%E4%BD%9C%E5%8C%BA">4.5. &#x6253;&#x5F00;&#x5DE5;&#x4F5C;&#x533A;</h2>
+
+<p>&#x6CE8;&#x610F;: &#x8FD9;&#x4E2A;&#x5DE5;&#x4F5C;&#x533A;&#x662F;&#x6307;&#x8FDC;&#x7AEF;&#x5DE5;&#x4F5C;&#x533A; &#x975E;&#x672C;&#x5730;<br>
+<img src="images/openwork.png" alt><br>
+&#x6210;&#x529F;&#x7684;&#x60C5;&#x51B5; &#x4F1A;&#x663E;&#x793A; [SSH: 10.246.34.79]</p>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6253;&#x5F00;sample&#x5DE5;&#x7A0B; &#x4FBF;&#x4E8E;&#x6D4B;&#x8BD5;&#x8C03;&#x8BD5;&#x529F;&#x80FD;</p>
+<h2 class="mume-header" id="46-%E5%AE%89%E8%A3%85cpptools-linuxvsix%E6%8F%92%E4%BB%B6">4.6. &#x5B89;&#x88C5;cpptools-linux.vsix&#x63D2;&#x4EF6;</h2>
+
+<h2 class="mume-header" id="47-%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95">4.7. &#x7F16;&#x8BD1;&#x8C03;&#x8BD5;</h2>
+
+<h3 class="mume-header" id="471-%E6%B3%A8%E6%84%8F-%E4%BE%8B%E5%AD%90%E5%B7%A5%E7%A8%8B%E4%BD%BF%E7%94%A8%E4%BA%86cmake32">4.7.1. &#x6CE8;&#x610F;: &#x4F8B;&#x5B50;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;cmake3.2+</h3>
+
+<p>&#x5B89;&#x88C5;&#x4E4B;&#x540E;&#x9700;&#x8981;ln&#x4E00;&#x4E0B;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>sudo rm -rf /usr/bin/cmake
+sudo ln /usr/bin/cmake3 /usr/bin/cmake
+</code></pre><h3 class="mume-header" id="472-%E5%85%88%E7%BC%96%E8%AF%91%E9%A1%B9%E7%9B%AE">4.7.2. &#x5148;&#x7F16;&#x8BD1;&#x9879;&#x76EE;</h3>
+
+<p><img src="images/buildsample.png" alt></p>
+<h3 class="mume-header" id="473-f9%E8%AE%BE%E7%BD%AE%E6%96%AD%E7%82%B9">4.7.3. F9&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;</h3>
+
+<p><img src="images/enterbreak.png" alt></p>
+<h3 class="mume-header" id="474-f5%E8%B0%83%E8%AF%95-%E9%80%89%E6%8B%A9c-gdblldb-%E5%90%8E%E9%9D%A2%E9%BB%98%E8%AE%A4%E5%8D%B3%E5%8F%AF%E9%80%89gccg%E5%90%8E%E7%BB%AD%E4%BC%9A%E6%8A%A5%E9%94%99-%E5%88%AB%E9%80%89%E9%94%99%E4%BA%86">4.7.4. F5&#x8C03;&#x8BD5;, &#x9009;&#x62E9;C++ (GDB/LLDB), &#x540E;&#x9762;&#x9ED8;&#x8BA4;&#x5373;&#x53EF;(&#x9009;gcc/g++&#x540E;&#x7EED;&#x4F1A;&#x62A5;&#x9519; &#x522B;&#x9009;&#x9519;&#x4E86;)</h3>
+
+<p><img src="images/debugsetup.png" alt></p>
+<h3 class="mume-header" id="475-%E5%BE%97%E5%88%B0%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">4.7.5. &#x5F97;&#x5230;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;json&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+
+<p><img src="images/defaultlaunch.png" alt></p>
+<h3 class="mume-header" id="476-%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%90%88%E7%90%86%E7%9A%84%E5%80%BC-%E4%B8%8B%E5%9B%BE%E4%B8%BAsample%E4%BE%8B%E5%AD%90%E8%B0%83%E8%AF%95%E8%AE%BE%E7%BD%AE">4.7.6. &#x8BBE;&#x7F6E;&#x4E3A;&#x5408;&#x7406;&#x7684;&#x503C;, &#x4E0B;&#x56FE;&#x4E3A;sample&#x4F8B;&#x5B50;&#x8C03;&#x8BD5;&#x8BBE;&#x7F6E;</h3>
+
+<p><img src="images/samplelaunch.png" alt></p>
+<h3 class="mume-header" id="477-f5%E5%BC%80%E5%A7%8B%E8%B0%83%E8%AF%95">4.7.7. F5&#x5F00;&#x59CB;&#x8C03;&#x8BD5;</h3>
+
+<p><img src="images/sampledebug.png" alt></p>
+<h2 class="mume-header" id="48-end">4.8. END</h2>
+
+<p>&#x6CE8;&#x610F;&#x4E8B;&#x9879;: &#x5728;&#x5916;&#x7F51;&#x4F7F;&#x7528;&#x5982;&#x679C;&#x672C;&#x8EAB;&#x6CA1;&#x6709;FQ, &#x8BF7;&#x5173;&#x95ED;&#x66F4;&#x65B0;, &#x539F;&#x56E0;&#x662F;.vscode-server-insiders.zip&#x7684;&#x7248;&#x672C;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7248;&#x672C;&#x5FC5;&#x987B;&#x4FDD;&#x6301;&#x5B8C;&#x5168;&#x4E00;&#x81F4;.<br>
+<img src="images/disableupdate.png" alt></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
