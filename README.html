@@ -3,8 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="file:///c:\Users\suiy\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
-      
+
       
       
       
@@ -261,119 +260,94 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h2>vscode-ssh</h2>
-<p>Copyright (c) 2013-2018 brinkqiang (<a href="mailto:brink.qiang@gmail.com">brink.qiang@gmail.com</a>)</p>
+      <h2 id="vscode-ssh">vscode-ssh</h2>
+<p>Copyright (c) 2013-2018 brinkqiang (brink.qiang@gmail.com)</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>vscode ssh &#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x642D;&#x5EFA;</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h2>vscode ssh &#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x642D;&#x5EFA;</h2>
-<hr>
 <ul>
-<li><a href="#1-%E5%AE%89%E8%A3%85vscode%E7%89%88%E6%9C%AC">1. &#x5B89;&#x88C5;VSCode&#x7248;&#x672C;</a></li>
-<li><a href="#2-%E5%9C%A8linux%E7%AB%AF-%E8%A7%A3%E5%8E%8Bvscode-serverzip%E5%88%B0%E8%B4%A6%E5%8F%B7%E6%A0%B9%E7%9B%AE%E5%BD%95">2. &#x5728;linux&#x7AEF; &#x89E3;&#x538B;.vscode-server.zip&#x5230;&#x8D26;&#x53F7;&#x6839;&#x76EE;&#x5F55;</a></li>
-<li><a href="#3-%E5%AE%89%E8%A3%85remote%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6">3. &#x5B89;&#x88C5;remote&#x76F8;&#x5173;&#x63D2;&#x4EF6;</a></li>
-<li><a href="#4-%E6%89%93%E5%BC%80%E8%BF%9C%E7%A8%8B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8">4. &#x6253;&#x5F00;&#x8FDC;&#x7A0B;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;</a>
+<li><a href="#1-&#x5B89;&#x88C5;vscode&#x7248;&#x672C;">1. &#x5B89;&#x88C5;VSCode&#x7248;&#x672C;</a></li>
+<li><a href="#2-&#x5728;linux&#x7AEF;-&#x89E3;&#x538B;vscode-serverzip&#x5230;&#x8D26;&#x53F7;&#x6839;&#x76EE;&#x5F55;">2. &#x5728;linux&#x7AEF; &#x89E3;&#x538B;.vscode-server.zip&#x5230;&#x8D26;&#x53F7;&#x6839;&#x76EE;&#x5F55;</a></li>
+<li><a href="#3-&#x5B89;&#x88C5;remote&#x76F8;&#x5173;&#x63D2;&#x4EF6;">3. &#x5B89;&#x88C5;remote&#x76F8;&#x5173;&#x63D2;&#x4EF6;</a></li>
+<li><a href="#4-&#x6253;&#x5F00;&#x8FDC;&#x7A0B;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;">4. &#x6253;&#x5F00;&#x8FDC;&#x7A0B;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;</a>
 <ul>
-<li><a href="#41-%E9%80%89%E6%8B%A9ssh-targets-%E7%82%B9%E5%8F%B7%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E9%93%BE%E6%8E%A5">4.1. &#x9009;&#x62E9;ssh targets &#x70B9;+&#x53F7;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x94FE;&#x63A5;</a></li>
-<li><a href="#42-%E8%BE%93%E5%85%A5-ssh-%E8%B4%A6%E5%8F%B7ip%E5%9C%B0%E5%9D%80--a">4.2. &#x8F93;&#x5165; ssh &#x8D26;&#x53F7;@IP&#x5730;&#x5740; -A</a></li>
-<li><a href="#43-%E5%8F%B3%E9%94%AEip%E5%9C%B0%E5%9D%80">4.3. &#x53F3;&#x952E;IP&#x5730;&#x5740;</a></li>
-<li><a href="#44-%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81">4.4. &#x8F93;&#x5165;&#x5BC6;&#x7801;</a></li>
-<li><a href="#45-%E6%89%93%E5%BC%80%E5%B7%A5%E4%BD%9C%E5%8C%BA">4.5. &#x6253;&#x5F00;&#x5DE5;&#x4F5C;&#x533A;</a></li>
-<li><a href="#46-%E5%AE%89%E8%A3%85cpptools-linuxvsix%E6%8F%92%E4%BB%B6">4.6. &#x5B89;&#x88C5;cpptools-linux.vsix&#x63D2;&#x4EF6;</a></li>
-<li><a href="#47-%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95">4.7. &#x7F16;&#x8BD1;&#x8C03;&#x8BD5;</a>
+<li><a href="#41-&#x9009;&#x62E9;ssh-targets-&#x70B9;&#x53F7;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x94FE;&#x63A5;">4.1. &#x9009;&#x62E9;ssh targets &#x70B9;+&#x53F7;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x94FE;&#x63A5;</a></li>
+<li><a href="#42-&#x8F93;&#x5165;-ssh-&#x8D26;&#x53F7;ip&#x5730;&#x5740;--a">4.2. &#x8F93;&#x5165; ssh &#x8D26;&#x53F7;@IP&#x5730;&#x5740; -A</a></li>
+<li><a href="#43-&#x53F3;&#x952E;ip&#x5730;&#x5740;">4.3. &#x53F3;&#x952E;IP&#x5730;&#x5740;</a></li>
+<li><a href="#44-&#x8F93;&#x5165;&#x5BC6;&#x7801;">4.4. &#x8F93;&#x5165;&#x5BC6;&#x7801;</a></li>
+<li><a href="#45-&#x6253;&#x5F00;&#x5DE5;&#x4F5C;&#x533A;">4.5. &#x6253;&#x5F00;&#x5DE5;&#x4F5C;&#x533A;</a></li>
+<li><a href="#46-&#x5B89;&#x88C5;cpptools-linuxvsix&#x63D2;&#x4EF6;">4.6. &#x5B89;&#x88C5;cpptools-linux.vsix&#x63D2;&#x4EF6;</a></li>
+<li><a href="#47-&#x7F16;&#x8BD1;&#x8C03;&#x8BD5;">4.7. &#x7F16;&#x8BD1;&#x8C03;&#x8BD5;</a>
 <ul>
-<li><a href="#471-%E6%B3%A8%E6%84%8F-%E4%BE%8B%E5%AD%90%E5%B7%A5%E7%A8%8B%E4%BD%BF%E7%94%A8%E4%BA%86cmake32">4.7.1. &#x6CE8;&#x610F;: &#x4F8B;&#x5B50;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;cmake3.2+</a></li>
-<li><a href="#472-%E5%85%88%E7%BC%96%E8%AF%91%E9%A1%B9%E7%9B%AE">4.7.2. &#x5148;&#x7F16;&#x8BD1;&#x9879;&#x76EE;</a></li>
-<li><a href="#473-f9%E8%AE%BE%E7%BD%AE%E6%96%AD%E7%82%B9">4.7.3. F9&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;</a></li>
-<li><a href="#474-f5%E8%B0%83%E8%AF%95-%E9%80%89%E6%8B%A9c-gdblldb-%E5%90%8E%E9%9D%A2%E9%BB%98%E8%AE%A4%E5%8D%B3%E5%8F%AF%E9%80%89gccg%E5%90%8E%E7%BB%AD%E4%BC%9A%E6%8A%A5%E9%94%99-%E5%88%AB%E9%80%89%E9%94%99%E4%BA%86">4.7.4. F5&#x8C03;&#x8BD5;, &#x9009;&#x62E9;C++ (GDB/LLDB), &#x540E;&#x9762;&#x9ED8;&#x8BA4;&#x5373;&#x53EF;(&#x9009;gcc/g++&#x540E;&#x7EED;&#x4F1A;&#x62A5;&#x9519; &#x522B;&#x9009;&#x9519;&#x4E86;)</a></li>
-<li><a href="#475-%E5%BE%97%E5%88%B0%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">4.7.5. &#x5F97;&#x5230;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;json&#x914D;&#x7F6E;&#x6587;&#x4EF6;</a></li>
-<li><a href="#476-%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%90%88%E7%90%86%E7%9A%84%E5%80%BC-%E4%B8%8B%E5%9B%BE%E4%B8%BAsample%E4%BE%8B%E5%AD%90%E8%B0%83%E8%AF%95%E8%AE%BE%E7%BD%AE">4.7.6. &#x8BBE;&#x7F6E;&#x4E3A;&#x5408;&#x7406;&#x7684;&#x503C;, &#x4E0B;&#x56FE;&#x4E3A;sample&#x4F8B;&#x5B50;&#x8C03;&#x8BD5;&#x8BBE;&#x7F6E;</a></li>
-<li><a href="#477-f5%E5%BC%80%E5%A7%8B%E8%B0%83%E8%AF%95">4.7.7. F5&#x5F00;&#x59CB;&#x8C03;&#x8BD5;</a></li>
-</ul>
-</li>
+<li><a href="#471-&#x6CE8;&#x610F;-&#x4F8B;&#x5B50;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;cmake32">4.7.1. &#x6CE8;&#x610F;: &#x4F8B;&#x5B50;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;cmake3.2+</a></li>
+<li><a href="#472-&#x5148;&#x7F16;&#x8BD1;&#x9879;&#x76EE;">4.7.2. &#x5148;&#x7F16;&#x8BD1;&#x9879;&#x76EE;</a></li>
+<li><a href="#473-f9&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;">4.7.3. F9&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;</a></li>
+<li><a href="#474-f5&#x8C03;&#x8BD5;-&#x9009;&#x62E9;c-gdblldb-&#x540E;&#x9762;&#x9ED8;&#x8BA4;&#x5373;&#x53EF;&#x9009;gccg&#x540E;&#x7EED;&#x4F1A;&#x62A5;&#x9519;-&#x522B;&#x9009;&#x9519;&#x4E86;">4.7.4. F5&#x8C03;&#x8BD5;, &#x9009;&#x62E9;C++ (GDB/LLDB), &#x540E;&#x9762;&#x9ED8;&#x8BA4;&#x5373;&#x53EF;(&#x9009;gcc/g++&#x540E;&#x7EED;&#x4F1A;&#x62A5;&#x9519; &#x522B;&#x9009;&#x9519;&#x4E86;)</a></li>
+<li><a href="#475-&#x5F97;&#x5230;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;json&#x914D;&#x7F6E;&#x6587;&#x4EF6;">4.7.5. &#x5F97;&#x5230;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;json&#x914D;&#x7F6E;&#x6587;&#x4EF6;</a></li>
+<li><a href="#476-&#x8BBE;&#x7F6E;&#x4E3A;&#x5408;&#x7406;&#x7684;&#x503C;-&#x4E0B;&#x56FE;&#x4E3A;sample&#x4F8B;&#x5B50;&#x8C03;&#x8BD5;&#x8BBE;&#x7F6E;">4.7.6. &#x8BBE;&#x7F6E;&#x4E3A;&#x5408;&#x7406;&#x7684;&#x503C;, &#x4E0B;&#x56FE;&#x4E3A;sample&#x4F8B;&#x5B50;&#x8C03;&#x8BD5;&#x8BBE;&#x7F6E;</a></li>
+<li><a href="#477-f5&#x5F00;&#x59CB;&#x8C03;&#x8BD5;">4.7.7. F5&#x5F00;&#x59CB;&#x8C03;&#x8BD5;</a></li>
+</ul></li>
 <li><a href="#48-end">4.8. END</a></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h1 class="mume-header" id="1-%E5%AE%89%E8%A3%85vscode%E7%89%88%E6%9C%AC">1. &#x5B89;&#x88C5;VSCode&#x7248;&#x672C;</h1>
-
+<h1 id="&#x5B89;&#x88C5;vscode&#x7248;&#x672C;">1. &#x5B89;&#x88C5;VSCode&#x7248;&#x672C;</h1>
 <p>&#x5B89;&#x88C5;setup&#x76EE;&#x5F55;VSCodeUserSetup-x64-1.46.1.exe</p>
-<h1 class="mume-header" id="2-%E5%9C%A8linux%E7%AB%AF-%E8%A7%A3%E5%8E%8Bvscode-serverzip%E5%88%B0%E8%B4%A6%E5%8F%B7%E6%A0%B9%E7%9B%AE%E5%BD%95">2. &#x5728;linux&#x7AEF; &#x89E3;&#x538B;.vscode-server.zip&#x5230;&#x8D26;&#x53F7;&#x6839;&#x76EE;&#x5F55;</h1>
-
-<pre data-role="codeBlock" data-info class="language-"><code>unzip -o -d ~/ .vscode-server.zip
-</code></pre><p>&#x53EF;&#x7528;upload&#x811A;&#x672C;&#x4E0A;&#x4F20;</p>
+<h1 id="&#x5728;linux&#x7AEF;-&#x89E3;&#x538B;vscode-serverzip&#x5230;&#x8D26;&#x53F7;&#x6839;&#x76EE;&#x5F55;">2. &#x5728;linux&#x7AEF; &#x89E3;&#x538B;.vscode-server.zip&#x5230;&#x8D26;&#x53F7;&#x6839;&#x76EE;&#x5F55;</h1>
+<pre class="text language-text" data-role="codeBlock" data-info="text"><code>unzip -o -d ~/ .vscode-server.zip</code></pre>
+<p>&#x53EF;&#x7528;upload&#x811A;&#x672C;&#x4E0A;&#x4F20;</p>
 <p>&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x5982;&#x4E0B;upload.(bat || sh) &#x8D26;&#x53F7;&#x540D;(&#x9ED8;&#x8BA4;&#x503C;:root) IP(&#x9ED8;&#x8BA4;&#x503C;:127.0.0.1) &#x7AEF;&#x53E3;(&#x9ED8;&#x8BA4;&#x503C;:22)</p>
 <p>windows</p>
-<pre data-role="codeBlock" data-info class="language-"><code>upload.bat test 10.246.34.79 22
-</code></pre><p>linux</p>
-<pre data-role="codeBlock" data-info class="language-"><code>bash upload.sh test 10.246.34.79 22
-</code></pre><h1 class="mume-header" id="3-%E5%AE%89%E8%A3%85remote%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6">3. &#x5B89;&#x88C5;remote&#x76F8;&#x5173;&#x63D2;&#x4EF6;</h1>
-
-<p>&#x6253;&#x5F00;&#x63D2;&#x4EF6;&#x9875;&#x9762; &#x9009;&#x62E9;&#x4ECE;VSIX&#x5B89;&#x88C5;&#x63D2;&#x4EF6; &#x6216; Ctrl+Shift+P &#x8F93;&#x5165;VSIX&#x5B89;&#x88C5;&#x63D2;&#x4EF6;<br>
-<img src="images/installvsix.png" alt><br>
-(setup&#x76EE;&#x5F55;ms-vscode-remote&#x5F00;&#x5934;&#x7684;&#x63D2;&#x4EF6;&#x5168;&#x90E8;&#x5B89;&#x88C5;)<br>
-&#x5176;&#x4ED6;&#x63D2;&#x4EF6;&#x770B;&#x81EA;&#x5DF1;&#x9700;&#x6C42;<br>
-&#x53EF;&#x7528;install_extension_dev&#x811A;&#x672C;&#x5B89;&#x88C5;</p>
+<pre class="text language-text" data-role="codeBlock" data-info="text"><code>upload.bat test 10.246.34.79 22</code></pre>
+<p>linux</p>
+<pre class="text language-text" data-role="codeBlock" data-info="text"><code>bash upload.sh test 10.246.34.79 22</code></pre>
+<h1 id="&#x5B89;&#x88C5;remote&#x76F8;&#x5173;&#x63D2;&#x4EF6;">3. &#x5B89;&#x88C5;remote&#x76F8;&#x5173;&#x63D2;&#x4EF6;</h1>
+<p>&#x6253;&#x5F00;&#x63D2;&#x4EF6;&#x9875;&#x9762; &#x9009;&#x62E9;&#x4ECE;VSIX&#x5B89;&#x88C5;&#x63D2;&#x4EF6; &#x6216; Ctrl+Shift+P &#x8F93;&#x5165;VSIX&#x5B89;&#x88C5;&#x63D2;&#x4EF6; <img src="images/installvsix.png"> (setup&#x76EE;&#x5F55;ms-vscode-remote&#x5F00;&#x5934;&#x7684;&#x63D2;&#x4EF6;&#x5168;&#x90E8;&#x5B89;&#x88C5;) &#x5176;&#x4ED6;&#x63D2;&#x4EF6;&#x770B;&#x81EA;&#x5DF1;&#x9700;&#x6C42; &#x53EF;&#x7528;install_extension_dev&#x811A;&#x672C;&#x5B89;&#x88C5;</p>
 <p>install_extension_dev.(bat || sh)</p>
 <p>windows</p>
-<pre data-role="codeBlock" data-info class="language-"><code>install_extension_dev.bat
-</code></pre><p>linux</p>
-<pre data-role="codeBlock" data-info class="language-"><code>bash install_extension_dev.sh
-</code></pre><h1 class="mume-header" id="4-%E6%89%93%E5%BC%80%E8%BF%9C%E7%A8%8B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8">4. &#x6253;&#x5F00;&#x8FDC;&#x7A0B;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;</h1>
-
-<h2 class="mume-header" id="41-%E9%80%89%E6%8B%A9ssh-targets-%E7%82%B9%E5%8F%B7%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E9%93%BE%E6%8E%A5">4.1. &#x9009;&#x62E9;ssh targets &#x70B9;+&#x53F7;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x94FE;&#x63A5;</h2>
-
-<p><img src="images/openremote.png" alt></p>
-<h2 class="mume-header" id="42-%E8%BE%93%E5%85%A5-ssh-%E8%B4%A6%E5%8F%B7ip%E5%9C%B0%E5%9D%80-a">4.2. &#x8F93;&#x5165; ssh &#x8D26;&#x53F7;@IP&#x5730;&#x5740; -A</h2>
-
-<p><img src="images/connectssh.png" alt></p>
+<pre class="text language-text" data-role="codeBlock" data-info="text"><code>install_extension_dev.bat</code></pre>
+<p>linux</p>
+<pre class="text language-text" data-role="codeBlock" data-info="text"><code>bash install_extension_dev.sh</code></pre>
+<h1 id="&#x6253;&#x5F00;&#x8FDC;&#x7A0B;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;">4. &#x6253;&#x5F00;&#x8FDC;&#x7A0B;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;</h1>
+<h2 id="&#x9009;&#x62E9;ssh-targets-&#x70B9;&#x53F7;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x94FE;&#x63A5;">4.1. &#x9009;&#x62E9;ssh targets &#x70B9;+&#x53F7;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x94FE;&#x63A5;</h2>
+<p><img src="images/openremote.png"></p>
+<h2 id="&#x8F93;&#x5165;-ssh-&#x8D26;&#x53F7;ip&#x5730;&#x5740;-a">4.2. &#x8F93;&#x5165; ssh &#x8D26;&#x53F7;@IP&#x5730;&#x5740; -A</h2>
+<p><img src="images/connectssh.png"></p>
 <p>&#x4F8B;:</p>
-<pre data-role="codeBlock" data-info class="language-"><code>ssh test@10.246.34.79 -A
-</code></pre><h2 class="mume-header" id="43-%E5%8F%B3%E9%94%AEip%E5%9C%B0%E5%9D%80">4.3. &#x53F3;&#x952E;IP&#x5730;&#x5740;</h2>
-
-<p><img src="images/connecthost.png" alt></p>
+<pre class="text language-text" data-role="codeBlock" data-info="text"><code>ssh test@10.246.34.79 -A</code></pre>
+<h2 id="&#x53F3;&#x952E;ip&#x5730;&#x5740;">4.3. &#x53F3;&#x952E;IP&#x5730;&#x5740;</h2>
+<p><img src="images/connecthost.png"></p>
 <p>&#x4F8B;:</p>
-<pre data-role="codeBlock" data-info class="language-"><code>&#x53F3;&#x952E; 10.246.34.79 -&gt; connect to host
-</code></pre><h2 class="mume-header" id="44-%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81">4.4. &#x8F93;&#x5165;&#x5BC6;&#x7801;</h2>
-
-<p><img src="images/enterpasswd.png" alt><br>
-&#x94FE;&#x63A5;&#x6210;&#x529F;&#x4F1A;&#x663E;&#x793A;&#x7EFF;&#x8272;&#x56FE;&#x6807;<br>
-<img src="images/connectok.png" alt></p>
-<h2 class="mume-header" id="45-%E6%89%93%E5%BC%80%E5%B7%A5%E4%BD%9C%E5%8C%BA">4.5. &#x6253;&#x5F00;&#x5DE5;&#x4F5C;&#x533A;</h2>
-
-<p>&#x6CE8;&#x610F;: &#x8FD9;&#x4E2A;&#x5DE5;&#x4F5C;&#x533A;&#x662F;&#x6307;&#x8FDC;&#x7AEF;&#x5DE5;&#x4F5C;&#x533A; &#x975E;&#x672C;&#x5730;<br>
-<img src="images/openwork.png" alt><br>
-&#x6210;&#x529F;&#x7684;&#x60C5;&#x51B5; &#x4F1A;&#x663E;&#x793A; [SSH: 10.246.34.79]</p>
+<pre class="text language-text" data-role="codeBlock" data-info="text"><code>&#x53F3;&#x952E; 10.246.34.79 -&gt; connect to host</code></pre>
+<h2 id="&#x8F93;&#x5165;&#x5BC6;&#x7801;">4.4. &#x8F93;&#x5165;&#x5BC6;&#x7801;</h2>
+<p><img src="images/enterpasswd.png"> &#x94FE;&#x63A5;&#x6210;&#x529F;&#x4F1A;&#x663E;&#x793A;&#x7EFF;&#x8272;&#x56FE;&#x6807; <img src="images/connectok.png"></p>
+<h2 id="&#x6253;&#x5F00;&#x5DE5;&#x4F5C;&#x533A;">4.5. &#x6253;&#x5F00;&#x5DE5;&#x4F5C;&#x533A;</h2>
+<p>&#x6CE8;&#x610F;: &#x8FD9;&#x4E2A;&#x5DE5;&#x4F5C;&#x533A;&#x662F;&#x6307;&#x8FDC;&#x7AEF;&#x5DE5;&#x4F5C;&#x533A; &#x975E;&#x672C;&#x5730; <img src="images/openwork.png"> &#x6210;&#x529F;&#x7684;&#x60C5;&#x51B5; &#x4F1A;&#x663E;&#x793A; [SSH: 10.246.34.79]</p>
 <p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6253;&#x5F00;sample&#x5DE5;&#x7A0B; &#x4FBF;&#x4E8E;&#x6D4B;&#x8BD5;&#x8C03;&#x8BD5;&#x529F;&#x80FD;</p>
-<h2 class="mume-header" id="46-%E5%AE%89%E8%A3%85cpptools-linuxvsix%E6%8F%92%E4%BB%B6">4.6. &#x5B89;&#x88C5;cpptools-linux.vsix&#x63D2;&#x4EF6;</h2>
-
-<h2 class="mume-header" id="47-%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95">4.7. &#x7F16;&#x8BD1;&#x8C03;&#x8BD5;</h2>
-
-<h3 class="mume-header" id="471-%E6%B3%A8%E6%84%8F-%E4%BE%8B%E5%AD%90%E5%B7%A5%E7%A8%8B%E4%BD%BF%E7%94%A8%E4%BA%86cmake32">4.7.1. &#x6CE8;&#x610F;: &#x4F8B;&#x5B50;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;cmake3.2+</h3>
-
+<h2 id="&#x5B89;&#x88C5;cpptools-linuxvsix&#x63D2;&#x4EF6;">4.6. &#x5B89;&#x88C5;cpptools-linux.vsix&#x63D2;&#x4EF6;</h2>
+<h2 id="&#x7F16;&#x8BD1;&#x8C03;&#x8BD5;">4.7. &#x7F16;&#x8BD1;&#x8C03;&#x8BD5;</h2>
+<h3 id="&#x6CE8;&#x610F;-&#x4F8B;&#x5B50;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;cmake32">4.7.1. &#x6CE8;&#x610F;: &#x4F8B;&#x5B50;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;cmake3.2+</h3>
 <p>&#x5B89;&#x88C5;&#x4E4B;&#x540E;&#x9700;&#x8981;ln&#x4E00;&#x4E0B;.</p>
-<pre data-role="codeBlock" data-info class="language-"><code>sudo rm -rf /usr/bin/cmake
-sudo ln /usr/bin/cmake3 /usr/bin/cmake
-</code></pre><h3 class="mume-header" id="472-%E5%85%88%E7%BC%96%E8%AF%91%E9%A1%B9%E7%9B%AE">4.7.2. &#x5148;&#x7F16;&#x8BD1;&#x9879;&#x76EE;</h3>
-
-<p><img src="images/buildsample.png" alt></p>
-<h3 class="mume-header" id="473-f9%E8%AE%BE%E7%BD%AE%E6%96%AD%E7%82%B9">4.7.3. F9&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;</h3>
-
-<p><img src="images/enterbreak.png" alt></p>
-<h3 class="mume-header" id="474-f5%E8%B0%83%E8%AF%95-%E9%80%89%E6%8B%A9c-gdblldb-%E5%90%8E%E9%9D%A2%E9%BB%98%E8%AE%A4%E5%8D%B3%E5%8F%AF%E9%80%89gccg%E5%90%8E%E7%BB%AD%E4%BC%9A%E6%8A%A5%E9%94%99-%E5%88%AB%E9%80%89%E9%94%99%E4%BA%86">4.7.4. F5&#x8C03;&#x8BD5;, &#x9009;&#x62E9;C++ (GDB/LLDB), &#x540E;&#x9762;&#x9ED8;&#x8BA4;&#x5373;&#x53EF;(&#x9009;gcc/g++&#x540E;&#x7EED;&#x4F1A;&#x62A5;&#x9519; &#x522B;&#x9009;&#x9519;&#x4E86;)</h3>
-
-<p><img src="images/debugsetup.png" alt></p>
-<h3 class="mume-header" id="475-%E5%BE%97%E5%88%B0%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">4.7.5. &#x5F97;&#x5230;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;json&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
-
-<p><img src="images/defaultlaunch.png" alt></p>
-<h3 class="mume-header" id="476-%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%90%88%E7%90%86%E7%9A%84%E5%80%BC-%E4%B8%8B%E5%9B%BE%E4%B8%BAsample%E4%BE%8B%E5%AD%90%E8%B0%83%E8%AF%95%E8%AE%BE%E7%BD%AE">4.7.6. &#x8BBE;&#x7F6E;&#x4E3A;&#x5408;&#x7406;&#x7684;&#x503C;, &#x4E0B;&#x56FE;&#x4E3A;sample&#x4F8B;&#x5B50;&#x8C03;&#x8BD5;&#x8BBE;&#x7F6E;</h3>
-
-<p><img src="images/samplelaunch.png" alt></p>
-<h3 class="mume-header" id="477-f5%E5%BC%80%E5%A7%8B%E8%B0%83%E8%AF%95">4.7.7. F5&#x5F00;&#x59CB;&#x8C03;&#x8BD5;</h3>
-
-<p><img src="images/sampledebug.png" alt></p>
-<h2 class="mume-header" id="48-end">4.8. END</h2>
-
-<p>&#x6CE8;&#x610F;&#x4E8B;&#x9879;: &#x5728;&#x5916;&#x7F51;&#x4F7F;&#x7528;&#x5982;&#x679C;&#x672C;&#x8EAB;&#x6CA1;&#x6709;FQ, &#x8BF7;&#x5173;&#x95ED;&#x66F4;&#x65B0;, &#x539F;&#x56E0;&#x662F;.vscode-server-insiders.zip&#x7684;&#x7248;&#x672C;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7248;&#x672C;&#x5FC5;&#x987B;&#x4FDD;&#x6301;&#x5B8C;&#x5168;&#x4E00;&#x81F4;.<br>
-<img src="images/disableupdate.png" alt></p>
+<pre class="text language-text" data-role="codeBlock" data-info="text"><code>sudo rm -rf /usr/bin/cmake
+sudo ln /usr/bin/cmake3 /usr/bin/cmake</code></pre>
+<h3 id="&#x5148;&#x7F16;&#x8BD1;&#x9879;&#x76EE;">4.7.2. &#x5148;&#x7F16;&#x8BD1;&#x9879;&#x76EE;</h3>
+<p><img src="images/buildsample.png"></p>
+<h3 id="f9&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;">4.7.3. F9&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;</h3>
+<p><img src="images/enterbreak.png"></p>
+<h3 id="f5&#x8C03;&#x8BD5;-&#x9009;&#x62E9;c-gdblldb-&#x540E;&#x9762;&#x9ED8;&#x8BA4;&#x5373;&#x53EF;&#x9009;gccg&#x540E;&#x7EED;&#x4F1A;&#x62A5;&#x9519;-&#x522B;&#x9009;&#x9519;&#x4E86;">4.7.4. F5&#x8C03;&#x8BD5;, &#x9009;&#x62E9;C++ (GDB/LLDB), &#x540E;&#x9762;&#x9ED8;&#x8BA4;&#x5373;&#x53EF;(&#x9009;gcc/g++&#x540E;&#x7EED;&#x4F1A;&#x62A5;&#x9519; &#x522B;&#x9009;&#x9519;&#x4E86;)</h3>
+<p><img src="images/debugsetup.png"></p>
+<h3 id="&#x5F97;&#x5230;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;json&#x914D;&#x7F6E;&#x6587;&#x4EF6;">4.7.5. &#x5F97;&#x5230;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;json&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<p><img src="images/defaultlaunch.png"></p>
+<h3 id="&#x8BBE;&#x7F6E;&#x4E3A;&#x5408;&#x7406;&#x7684;&#x503C;-&#x4E0B;&#x56FE;&#x4E3A;sample&#x4F8B;&#x5B50;&#x8C03;&#x8BD5;&#x8BBE;&#x7F6E;">4.7.6. &#x8BBE;&#x7F6E;&#x4E3A;&#x5408;&#x7406;&#x7684;&#x503C;, &#x4E0B;&#x56FE;&#x4E3A;sample&#x4F8B;&#x5B50;&#x8C03;&#x8BD5;&#x8BBE;&#x7F6E;</h3>
+<p><img src="images/samplelaunch.png"></p>
+<h3 id="f5&#x5F00;&#x59CB;&#x8C03;&#x8BD5;">4.7.7. F5&#x5F00;&#x59CB;&#x8C03;&#x8BD5;</h3>
+<p><img src="images/sampledebug.png"></p>
+<h2 id="end">4.8. END</h2>
+<p>&#x6CE8;&#x610F;&#x4E8B;&#x9879;: &#x5728;&#x5916;&#x7F51;&#x4F7F;&#x7528;&#x5982;&#x679C;&#x672C;&#x8EAB;&#x6CA1;&#x6709;FQ, &#x8BF7;&#x5173;&#x95ED;&#x66F4;&#x65B0;, &#x539F;&#x56E0;&#x662F;.vscode-server.zip&#x7684;&#x7248;&#x672C;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7248;&#x672C;&#x5FC5;&#x987B;&#x4FDD;&#x6301;&#x5B8C;&#x5168;&#x4E00;&#x81F4;. <img src="images/disableupdate.png"></p>
 
       </div>
       
