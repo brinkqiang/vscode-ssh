@@ -27,4 +27,6 @@ plink -P %port% -pw %passwd% %username%@%ip% "chmod +x ~/.vscode-server/bin/cd9e
 
 plink -P %port% -pw %passwd% %username%@%ip% "chmod +x ~/.vscode-server/bin/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/node_modules/vscode-ripgrep/bin/rg"
 
+plink -P %port% -pw %passwd% %username%@%ip% "chmod +x ~/.vscode-server/bin/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/node_modules/semver/bin/semver"
+
 echo upload .vscode-server end
