@@ -38,20 +38,12 @@ fi
 
 echo username="$username" ip="$ip" port="$port"
 
-NODE_PATH = $(shell $(if $(wildcard  ~/.vscode-server/bin),find  ~/.vscode-server/bin -maxdepth 3 -name "node",))
-SERVER_PATH = $(shell $(if $(wildcard  ~/.vscode-server/bin),find  ~/.vscode-server/bin -maxdepth 3 -name "server.sh",))
-
-define SSHPASS_EXEC
-    sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(1)"
-endef
-
 echo upload .vscode-server start
 
 sshpass -p "$passwd" scp -P $port ./setup/.vscode-server.zip $username@$ip:~/.vscode-server.zip
 
 sshpass -p "$passwd" ssh -p $port $username@$ip "unzip -o -d ~/ ~/.vscode-server.zip"
-
-$(foreach NODE_DIR, $(NODE_PATH), $(eval $(call SSHPASS_EXEC,$(NODE_DIR))))
-$(foreach SERVER_DIR, $(SERVER_PATH), $(eval $(call SSHPASS_EXEC,$(NODE_DIR))))
+sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(find  ~/.vscode-server/bin -maxdepth 3 -name node)"
+sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(find  ~/.vscode-server/bin -maxdepth 3 -name server.sh)"
 
 echo upload .vscode-server end
