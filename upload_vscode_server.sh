@@ -8,10 +8,17 @@ if [ -f /etc/lsb-release ]; then
   sudo apt install -y sshpass
 fi
 
-username=$1
-passwd=$2
-ip=$3
-port=$4
+echo -n "Please input your username: "
+read username
+
+echo -n "Please input your passwd: "
+read passwd
+
+echo -n "Please input your ip: "
+read ip
+
+echo -n "Please input your port: "
+read port
 
 if [ "$username" == "" ]; then
     username="root"
