@@ -23,7 +23,7 @@ echo username="$username" ip="$ip" port="$port"
 
 echo begin scp
 
-scp -P $port ./setup/.vscode-server.zip $username@$ip:~/
+scp -P $port ./setup/.vscode-server.zip $username@$ip:
 
 ssh -P $port $username@$ip "unzip -o -d ~/ ~/.vscode-server.zip"
 
