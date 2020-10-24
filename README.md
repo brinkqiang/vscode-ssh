@@ -39,7 +39,7 @@ vscode ssh 远程调试开发环境搭建
 
 用upload_vscode_server脚本上传
 
-命令格式如下upload_vscode_server.bat 账号名(默认值:root) 密码() IP(默认值:127.0.0.1) 端口(默认值:22)
+命令格式如下upload_vscode_server.bat 账号名(默认值:root) 密码(默认值:123456) IP(默认值:127.0.0.1) 端口(默认值:22)
 
 windows
 ```
