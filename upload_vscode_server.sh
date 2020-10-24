@@ -33,7 +33,7 @@ echo username="$username" ip="$ip" port="$port"
 
 echo upload .vscode-server start
 
-sshpass -p "$passwd" scp -P $port ./setup/.vscode-server.zip $username@$ip:~/
+sshpass -p "$passwd" scp -P $port ./setup/.vscode-server.zip $username@$ip:~/.vscode-server.zip
 
 sshpass -p "$passwd" ssh -p $port $username@$ip "unzip -o -d ~/ ~/.vscode-server.zip"
 sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x ~/.vscode-server/bin/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/node"
