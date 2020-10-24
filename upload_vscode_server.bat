@@ -21,8 +21,9 @@ pscp -P %port% -pw %passwd% setup\.vscode-server.zip %username%@%ip%:~
 
 plink -P %port% -pw %passwd% %username%@%ip% "unzip -o -d ~/ ~/.vscode-server.zip" 
 
-plink -P %port% -pw %passwd% %username%@%ip% "chmod +x ~/.vscode-server/bin/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/node"
-
-plink -P %port% -pw %passwd% %username%@%ip% "chmod +x ~/.vscode-server/bin/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/server.sh"
+plink -P %port% -pw %passwd% %username%@%ip% "chmod +x $(find  ~/.vscode-server/bin -maxdepth 3 -name node"
+plink -P %port% -pw %passwd% %username%@%ip% "chmod +x $(find  ~/.vscode-server/bin -maxdepth 3 -name server.sh"
+plink -P %port% -pw %passwd% %username%@%ip% "chmod +x $(find  ~/.vscode-server/bin -maxdepth 5 -name semver"
+plink -P %port% -pw %passwd% %username%@%ip% "chmod +x $(find  ~/.vscode-server/bin -maxdepth 5 -name rg"
 
 echo upload .vscode-server end
