@@ -1,37 +1,42 @@
 #!/bin/bash
 
-username=$1
-ip=$2
-port=$3
+if [ -f /etc/redhat-release ]; then
+  sudo yum install -y sshpass
+fi
 
-if [ "$username" == "" ]
-then
+if [ -f /etc/lsb-release ]; then
+  sudo apt install -y sshpass
+fi
+
+username=$1
+passwd=$2
+ip=$3
+port=$4
+
+if [ "$username" == "" ]; then
     username="root"
 fi
 
-if [ "$ip" == "" ]
-then
+if [ "$passwd" == "" ]; then
+    passwd="123456"
+fi
+
+if [ "$ip" == "" ]; then
     ip="127.0.0.1"
 fi
 
-if [ "$port" == "" ]
-then
+if [ "$port" == "" ]; then
     port="22"
 fi
 
 echo username="$username" ip="$ip" port="$port"
 
-echo begin scp
+echo upload .vscode-server start
 
-scp -P $port ./setup/.vscode-server.zip $username@$ip:
+sshpass -p "$passwd" scp -P $port ./setup/.vscode-server.zip $username@$ip:~/
 
-ssh -P $port $username@$ip "unzip -o -d ~/ ~/.vscode-server.zip"
-
-ssh -P $port %passwd% %username%@%ip% "chmod +x ~/.vscode-server/bin/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/node"
-
-ssh -P $port %passwd% %username%@%ip% "chmod +x ~/.vscode-server/bin/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/server.sh"
-
+sshpass -p "$passwd" ssh -p $port $username@$ip "unzip -o -d ~/ ~/.vscode-server.zip"
 sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x ~/.vscode-server/bin/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/node"
 sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x ~/.vscode-server/bin/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/server.sh"
 
-echo end scp
+echo upload .vscode-server end
