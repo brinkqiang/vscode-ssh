@@ -45,5 +45,6 @@ sshpass -p "$passwd" scp -P $port ./setup/.vscode-server.zip $username@$ip:~/.vs
 sshpass -p "$passwd" ssh -p $port $username@$ip "unzip -o -d ~/ ~/.vscode-server.zip"
 sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(find  ~/.vscode-server/bin -maxdepth 3 -name node)"
 sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(find  ~/.vscode-server/bin -maxdepth 3 -name server.sh)"
+sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(find  ~/.vscode-server/bin -maxdepth 5 -name semver)"
 
 echo upload .vscode-server end
