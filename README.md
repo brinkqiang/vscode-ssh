@@ -162,3 +162,8 @@ vscode-proto3插件配置
     ]
 }
 ```
+
+设置zsh为启动项
+```
+chsh -s /bin/zsh
+```

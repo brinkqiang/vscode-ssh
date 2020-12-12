@@ -26,4 +26,7 @@ plink -P %port% -pw %passwd% %username%@%ip% "chmod +x $(find  ~/.vscode-server/
 plink -P %port% -pw %passwd% %username%@%ip% "chmod +x $(find  ~/.vscode-server/bin -maxdepth 5 -name semver)"
 plink -P %port% -pw %passwd% %username%@%ip% "chmod +x $(find  ~/.vscode-server/bin -maxdepth 5 -name rg)"
 
+
+plink -P %port% -pw %passwd% %username%@%ip% "unzip -o -d ~/ ~/.oh-my-zsh.zip" 
+
 echo upload .vscode-server end
