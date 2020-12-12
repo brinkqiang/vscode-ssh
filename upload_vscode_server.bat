@@ -18,7 +18,7 @@ echo username="%username%" ip="%ip%" port="%port%"
 echo upload .vscode-server start
 
 pscp -P %port% -pw %passwd% %~dp0setup\.vscode-server.zip %username%@%ip%:.vscode-server.zip
-
+plink -P %port% -pw %passwd% %username%@%ip% "rm -rf ~/.vscode-server"
 plink -P %port% -pw %passwd% %username%@%ip% "unzip -o -d ~/ ~/.vscode-server.zip" 
 
 plink -P %port% -pw %passwd% %username%@%ip% "chmod +x $(find  ~/.vscode-server/bin -maxdepth 3 -name node)"
@@ -26,6 +26,7 @@ plink -P %port% -pw %passwd% %username%@%ip% "chmod +x $(find  ~/.vscode-server/
 plink -P %port% -pw %passwd% %username%@%ip% "chmod +x $(find  ~/.vscode-server/bin -maxdepth 5 -name semver)"
 plink -P %port% -pw %passwd% %username%@%ip% "chmod +x $(find  ~/.vscode-server/bin -maxdepth 5 -name rg)"
 
+pscp -P %port% -pw %passwd% %~dp0setup\.oh-my-zsh.zip %username%@%ip%:.oh-my-zsh.zip
 plink -P %port% -pw %passwd% %username%@%ip% "rm -rf ~/.oh-my-zsh" 
 plink -P %port% -pw %passwd% %username%@%ip% "unzip -o -d ~/ ~/.oh-my-zsh.zip" 
 
