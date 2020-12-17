@@ -1,11 +1,11 @@
 #!/bin/bash
 
 if [ -f /etc/redhat-release ]; then
-  sudo yum install -y sshpass
+  sudo yum install -y sshpass unzip
 fi
 
 if [ -f /etc/lsb-release ]; then
-  sudo apt install -y sshpass
+  sudo apt install -y sshpass unzip
 fi
 
 echo -n "Please input your username: "
