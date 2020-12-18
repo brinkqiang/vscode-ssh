@@ -49,8 +49,4 @@ sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(find  ~/.vscode-serv
 sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(find  ~/.vscode-server/bin -maxdepth 5 -name semver)"
 sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(find  ~/.vscode-server/bin -maxdepth 5 -name rg)"
 
-sshpass -p "$passwd" scp -P $port ./setup/.oh-my-zsh.zip $username@$ip:~/.oh-my-zsh.zip
-sshpass -p "$passwd" ssh -p $port $username@$ip "rm -rf ~/.oh-my-zsh"
-sshpass -p "$passwd" ssh -p $port $username@$ip "unzip -o -d ~/ ~/.oh-my-zsh.zip"
-
 echo upload .vscode-server end
