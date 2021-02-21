@@ -1,11 +1,11 @@
 #!/bin/bash
 
 if [ -f /etc/redhat-release ]; then
-  sudo yum install -y sshpass
+  sudo yum install -y sshpass unzip
 fi
 
 if [ -f /etc/lsb-release ]; then
-  sudo apt install -y sshpass
+  sudo apt install -y sshpass unzip
 fi
 
 echo -n "Please input your username: "
@@ -43,13 +43,10 @@ echo upload .vscode-server start
 sshpass -p "$passwd" scp -P $port ./setup/.vscode-server.zip $username@$ip:~/.vscode-server.zip
 sshpass -p "$passwd" ssh -p $port $username@$ip "rm -rf ~/.vscode-server"
 sshpass -p "$passwd" ssh -p $port $username@$ip "unzip -o -d ~/ ~/.vscode-server.zip"
+
 sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(find  ~/.vscode-server/bin -maxdepth 3 -name node)"
 sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(find  ~/.vscode-server/bin -maxdepth 3 -name server.sh)"
 sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(find  ~/.vscode-server/bin -maxdepth 5 -name semver)"
 sshpass -p "$passwd" ssh -p $port $username@$ip "chmod +x $(find  ~/.vscode-server/bin -maxdepth 5 -name rg)"
-
-sshpass -p "$passwd" scp -P $port ./setup/.oh-my-zsh.zip $username@$ip:~/.oh-my-zsh.zip
-sshpass -p "$passwd" ssh -p $port $username@$ip "rm -rf ~/.oh-my-zsh"
-sshpass -p "$passwd" ssh -p $port $username@$ip "unzip -o -d ~/ ~/.oh-my-zsh.zip"
 
 echo upload .vscode-server end

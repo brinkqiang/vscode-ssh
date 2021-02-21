@@ -35,7 +35,7 @@ vscode ssh 远程调试开发环境搭建
 # 1. 安装VSCode版本
 <a id="markdown-%E5%AE%89%E8%A3%85vscode%E7%89%88%E6%9C%AC" name="%E5%AE%89%E8%A3%85vscode%E7%89%88%E6%9C%AC"></a>
 
-安装setup目录VSCodeUserSetup-x64-1.46.1.exe
+安装setup目录VSCodeSetup-x64-1.52.0.exe
 
 # 2. 在linux端 解压.vscode-server.zip到账号根目录
 <a id="markdown-%E5%9C%A8linux%E7%AB%AF-%E8%A7%A3%E5%8E%8B.vscode-server.zip%E5%88%B0%E8%B4%A6%E5%8F%B7%E6%A0%B9%E7%9B%AE%E5%BD%95" name="%E5%9C%A8linux%E7%AB%AF-%E8%A7%A3%E5%8E%8B.vscode-server.zip%E5%88%B0%E8%B4%A6%E5%8F%B7%E6%A0%B9%E7%9B%AE%E5%BD%95"></a>
